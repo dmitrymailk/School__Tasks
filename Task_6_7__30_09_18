@@ -1,0 +1,42 @@
+print('\nTask 6')
+arr = [] # массив который я буду заполнять значениями
+amount = 0 # количество числел которые удовлетворяют условию
+len1 = int(input()) # количество элементов в массиве
+
+for i in range(0,len1):
+	num = int(input())
+	arr.append(num) # добавление элемента в массив
+
+
+for i in range(0,len(arr)):
+	for j in range(i+1, len(arr)):
+		if (arr[i] * arr[j]) % 6 == 0: # если без остатка делится на 6 то увеличиваем счетчик
+			amount += 1
+
+print(amount) #выводим значение
+
+
+print('\nTask 7')
+
+len2 = int(input())
+sum_elem = []
+amount2 = 0 # количество встречаемых элементов
+amount3 = 0 # встречаемый элемент
+summ = 0 # сумма цифр числа
+
+for i in range(0,len2):
+	a = input()
+	summ = 0
+
+	for j in range(0,len(a)):
+		summ += int(a[j]) # складываю все элементы числа
+
+	sum_elem.append(summ) # добавляю в массив конечную сумму числа
+
+for i in sum_elem: # прохожу каждый элемент массива
+	if amount2 < sum_elem.count(i): # count(i) показывает кол-во элементов i в массиве
+		amount2 = sum_elem.count(i)
+		amount3 = i
+
+
+print(amount3)
